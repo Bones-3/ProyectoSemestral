@@ -23,4 +23,6 @@ public class Categoria {
     private Long id;
     @Column(name = "nombre_categoria",nullable = false)
     private String nombreCategoria;
+    @Column(name = "estado_categoria", nullable = false)
+    private boolean estadoCategoria;
 }

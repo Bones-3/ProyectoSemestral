@@ -20,17 +20,20 @@ import lombok.NoArgsConstructor;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_producto")
+    @Column(name ="id_producto")
     private Long id;
 
-    @Column(name= "nombre_producto", nullable = false) 
+    @Column(name = "nombre_producto", nullable = false) 
     private String nombreProducto;
 
-    @Column(name= "precio", nullable = false)
+    @Column(name = "precio", nullable = false)
     private Double precio;
 
-    @Column(name= "descripcion", nullable = false)
+    @Column(name = "descripcion", nullable = false)
     private String descripcion;
+
+    @Column(name = "estado_producto", nullable = false)
+    private boolean estadoProducto;
     
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)

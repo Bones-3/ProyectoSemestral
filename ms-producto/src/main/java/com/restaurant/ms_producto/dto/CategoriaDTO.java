@@ -14,13 +14,14 @@ import lombok.NoArgsConstructor;
 public class CategoriaDTO {
     private Long id;
     private String nombreCategoria;
+    private boolean estadoCategoria;
 
     public Categoria toModel() {
-        return new Categoria(id, nombreCategoria);
+        return new Categoria(id, nombreCategoria, estadoCategoria);
     }
 
     public static CategoriaDTO fromModel(Categoria c) {
         if (c == null) return null;
-        return new CategoriaDTO(c.getId(), c.getNombreCategoria());
+        return new CategoriaDTO(c.getId(), c.getNombreCategoria(), c.isEstadoCategoria());
     }
 }
