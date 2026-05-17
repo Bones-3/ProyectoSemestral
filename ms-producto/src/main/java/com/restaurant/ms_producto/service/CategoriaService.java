@@ -39,11 +39,11 @@ public class CategoriaService {
         .orElseThrow(() -> new RuntimeException("Categoria no encontrada"));
     }
 
-    //Metodo modificar lacategoria 
+    //Metodo modificar la categoria 
     public Categoria modificar (long id, Categoria categoria) {
         return categoriaRepository.findById(id).map(categoriaExistente -> {
             categoriaExistente.setNombreCategoria(categoria.getNombreCategoria());
-            categoriaExistente.setEstadoCategoria(categoria.isEstadoCategoria());
+            categoriaExistente.setEstadoCategoria(categoria.getEstadoCategoria());
             return categoriaRepository.save(categoriaExistente);
         }).orElse(null);
     }

@@ -21,8 +21,10 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_categoria")
     private Long id;
+    
     @Column(name = "nombre_categoria",nullable = false)
     private String nombreCategoria;
+    
     @Column(name = "estado_categoria", nullable = false)
-    private boolean estadoCategoria;
+    private Boolean estadoCategoria;
 }
